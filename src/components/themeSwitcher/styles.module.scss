@@ -1,0 +1,15 @@
+.box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.button {
+  cursor: pointer;
+}
+
+@media (max-width: 375px) {
+  .text {
+    font-size: 14px;
+  }
+}

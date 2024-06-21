@@ -1,0 +1,32 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.light {
+  background-color: var(--white-2);
+}
+
+.dark {
+  background-color: var(--black-3);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 375px) {
+  .header {
+    padding: 20px 10px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+}

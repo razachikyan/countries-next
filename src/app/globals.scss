@@ -1,0 +1,56 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-weight: 400;
+  overflow-anchor: none;
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+:root {
+  --black-1: #17181a;
+  --black-2: #2b3743;
+  --black-3: #202d36;
+  --white-1: #fff;
+  --white-2: #fefefe;
+  --gray-1: #777;
+  --gray-2: #c5c5c5;
+  --gray-3: #eee;
+  --green-1: #0fa958;
+  --green-2: #0f0;
+  --light-green-1: rgba(15, 169, 88, 0.1);
+  --light-green-2: rgba(15, 169, 88, 0.3);
+  --red-1: #d9004d;
+  --red-2: #f00;
+  --light-red-1: rgba(217, 0, 77, 0.1);
+  --light-red-2: rgba(255, 44, 44, 0.2);
+  --blue-1: #007be5;
+  --blue-2: #55b0ff;
+  --light-blue-1: rgba(0, 123, 229, 0.1);
+  --light-blue-2: rgba(0, 137, 255, 0.25);
+}

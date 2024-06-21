@@ -1,0 +1,25 @@
+.box {
+  position: relative;
+  max-width: 480px;
+  width: 100%;
+}
+
+.icon {
+  position: absolute;
+  left: 31px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.search {
+  border: 1px solid var(--gray-2);
+  border-radius: 8px;
+  background-color: transparent;
+  padding: 19px 16px 19px 70px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  width: 100%;
+  font-size: 16px;
+  color: var(--gray-1);
+}
