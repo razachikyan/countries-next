@@ -55,8 +55,8 @@ export default async function Country({
           <div className={styles.additional}>
             <span className={styles.borderLabel}>Border Countries: </span>
             {country.borders &&
-              country.borders.map((border) => (
-                <span className={styles.border}>{border}</span>
+              country.borders.map((border, i) => (
+                <span key={i} className={styles.border}>{border}</span>
               ))}
           </div>
         </div>

@@ -1,4 +1,5 @@
 export interface Country {
+  alpha3Code: string;
   name: {
     common: string;
     official: string;

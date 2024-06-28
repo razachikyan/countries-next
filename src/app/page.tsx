@@ -1,4 +1,6 @@
 import axios from "axios";
+import { Suspense } from "react";
+import Skeleton from "react-loading-skeleton";
 import { Container } from "@/components/container";
 import { CardsList } from "@/components/cardList";
 import { Filters } from "@/components/filters";
@@ -22,7 +24,18 @@ export default async function Home() {
         <Search />
         <Filters regions={regions} />
       </div>
-      <CardsList data={data} />
+      <Suspense
+        fallback={Array.from({ length: 12 }).map((_, i) => (
+          <Skeleton
+            key={i}
+            baseColor="var(--black-3)"
+            width={300}
+            height={300}
+          />
+        ))}
+      >
+        <CardsList data={data} />
+      </Suspense>
     </Container>
   );
 }

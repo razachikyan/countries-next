@@ -48,6 +48,14 @@
   border-radius: 7px;
 }
 
+.block {
+  max-width: 580px;
+}
+
+.col {
+  max-width: 45%;
+}
+
 @media (max-width: 1200px) {
   .image {
     width: 500px;

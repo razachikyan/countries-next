@@ -13,6 +13,7 @@ export const Search = () => {
   const { theme } = useTheme();
   const router = useRouter();
   const pathname = usePathname();
+  const searParams = useSearchParams();
 
   useEffect(() => {
     if (timeoutId) clearTimeout(timeoutId);
@@ -20,7 +21,7 @@ export const Search = () => {
       const params = new URLSearchParams();
       params.set("query", query);
       const url = `${pathname}?${params.toString()}`;
-      query && router.push(url);
+      searParams.size !== 0 && router.push(url);
     }, 500);
   }, [query]);
 

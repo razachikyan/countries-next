@@ -1,8 +1,8 @@
 "use client";
-import { useTheme } from "next-themes";
-import classNames from "classnames";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+import classNames from "classnames";
+import { useTheme } from "next-themes";
 import { formatNumber } from "@/utils/formatNumber";
 import { ICardProps } from "./types";
 
@@ -23,7 +23,12 @@ export const Card = ({
       className={classNames(styles.card, styles[String(theme)])}
     >
       <div className={styles.image}>
-        <Image fill src={flag} alt="country" />
+        <Image
+          fill
+          src={flag}
+          alt="country"
+          sizes="width: 100%; height: 100%;"
+        />
       </div>
       <div className={styles.text}>
         <span className={styles.name}>{name}</span>

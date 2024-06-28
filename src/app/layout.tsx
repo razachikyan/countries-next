@@ -5,6 +5,8 @@ import type { Metadata } from "next";
 import { Header } from "@/components/header";
 import { Main } from "@/components/main";
 
+import "react-loading-skeleton/dist/skeleton.css";
+import "normalize.css";
 import "./globals.scss";
 
 const inter = Inter({ subsets: ["latin"] });

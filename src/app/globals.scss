@@ -54,3 +54,11 @@ ul {
   --light-blue-1: rgba(0, 123, 229, 0.1);
   --light-blue-2: rgba(0, 137, 255, 0.25);
 }
+
+.dark {
+  background-color: var(--black-3);
+}
+
+.light {
+  background-color: var(--white-2);
+}

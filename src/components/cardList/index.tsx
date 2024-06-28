@@ -5,8 +5,9 @@ import { ICardsListProps } from "./types";
 import { Country } from "@/types";
 import { Card } from "../card";
 import defaultData from "@public/data.json";
-import styles from "./styles.module.scss";
 import { filterDefaultData, filterServerData } from "./utils";
+
+import styles from "./styles.module.scss";
 
 export const CardsList = ({ data }: ICardsListProps) => {
   const [cards, setCards] = useState<Country[]>(data || defaultData);
@@ -15,28 +16,26 @@ export const CardsList = ({ data }: ICardsListProps) => {
   useEffect(() => {
     const reg = searchParams.get("region") ?? "";
     const query = searchParams.get("query") ?? "";
-    filterServerData(query, reg)
-      .then((res) => {
-        if (!res ?? res.length === 0) throw Error("empty data");
-        setCards(res);
-      })
-      .catch((err) => {
+
+    const load = async () => {
+      try {
+        const cards = await filterServerData(query, reg);
+        if (!cards || cards.length === 0) throw Error("empty data");
+        setCards(cards);
+      } catch (err) {
         console.log(err);
         setCards(filterDefaultData(query, reg) as unknown as Country[]);
-      });
-    setCards(
-      reg
-        ? data.filter(
-            (card) => card.region.toLowerCase() === searchParams.get("region")
-          )
-        : data
-    );
-  }, [searchParams]);
+      }
+    };
+
+    load();
+  }, [searchParams, data]);
 
   return (
     <div className={styles.cards}>
-      {cards.map((card) => (
+      {cards.map((card, i) => (
         <Card
+          key={i}
           flag={card.flags.png}
           name={card.name.official ?? card.name}
           region={card.region}
